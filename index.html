@@ -20,14 +20,14 @@ h1{font:800 clamp(60px,9.5vw,165px)/.82 "Space Grotesk";letter-spacing:-.08em;ma
 .scene{height:650px;position:relative;display:grid;place-items:center;perspective:1600px}
 .orbital{position:absolute;inset:0}
 .model-stage{position:relative;width:min(500px,88%);height:590px;display:grid;place-items:center;transform-style:preserve-3d;transition:transform .18s cubic-bezier(.2,.8,.2,1)}
-.profile-wrap{position:relative;width:min(370px,76%);aspect-ratio:.79;transform-style:preserve-3d;animation:profileFloat 7s ease-in-out infinite}
+.profile-wrap{position:relative;width:min(330px,72vw);aspect-ratio:691/1536;transform-style:preserve-3d;animation:profileFloat 7s ease-in-out infinite}
 .profile-wrap:before{content:"";position:absolute;inset:-14%;border-radius:42%;background:conic-gradient(from 20deg,#f5b63f00,#f5b63f77,#54d7ff00,#ff5fcf55,#f5b63f00);filter:blur(24px);opacity:.55;animation:haloSpin 12s linear infinite}
 .profile-wrap:after{content:"";position:absolute;inset:-4px;border-radius:30px;border:1px solid #ffffff28;background:linear-gradient(135deg,#ffffff18,transparent 28%,transparent 70%,#54d7ff10);box-shadow:inset 0 0 45px #ffffff08,0 35px 100px #000c;pointer-events:none}
-.profile-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 34%;border-radius:28px;display:block;filter:saturate(1.04) contrast(1.04);box-shadow:0 45px 100px #000c;transform:translateZ(24px)}
-.profile-glass{position:absolute;inset:0;border-radius:28px;overflow:hidden;pointer-events:none;z-index:3}
-.profile-glass:before{content:"";position:absolute;inset:-50%;background:linear-gradient(115deg,transparent 40%,#ffffff25 47%,transparent 54%);transform:translateX(-55%) rotate(7deg);animation:scanSweep 6s ease-in-out infinite}
-.profile-glass:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#ffffff0d,transparent 22%,transparent 70%,#0008)}
-.profile-grid{position:absolute;inset:0;background:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(transparent,black 25%,black 70%,transparent);opacity:.18;z-index:4;pointer-events:none}
+.profile-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;filter:none;image-rendering:auto;backface-visibility:hidden;box-shadow:0 45px 100px #000b;transform:translateZ(12px);border-radius:22px}
+.profile-glass{position:absolute;inset:0;border-radius:22px;overflow:hidden;pointer-events:none;z-index:3;border:1px solid #ffffff20;box-shadow:inset 0 0 35px #ffffff06}
+
+
+.profile-grid{display:none}
 .profile-ring{position:absolute;width:112%;height:72%;border:1px solid #f5b63f55;border-radius:50%;transform:rotateX(72deg) rotateZ(-18deg);box-shadow:0 0 45px #f5b63f1c;animation:ringSpin 11s linear infinite}
 .profile-ring.r2{width:88%;height:105%;border-color:#54d7ff55;transform:rotateY(68deg) rotateZ(20deg);animation-duration:15s;animation-direction:reverse}
 .profile-ring.r3{width:125%;height:125%;border-color:#ff5fcf25;transform:rotateX(62deg) rotateY(15deg);animation-duration:21s}
@@ -44,7 +44,7 @@ h1{font:800 clamp(60px,9.5vw,165px)/.82 "Space Grotesk";letter-spacing:-.08em;ma
 .b2{bottom:22%;right:0;color:var(--gold);border-color:#f5b63f55;transform:rotate(4deg)}
 @keyframes profileFloat{0%,100%{transform:translateY(0) rotateZ(0)}50%{transform:translateY(-10px) rotateZ(.5deg)}}
 @keyframes haloSpin{to{transform:rotate(360deg)}}
-@keyframes scanSweep{0%,25%{transform:translateX(-65%) rotate(7deg)}55%,100%{transform:translateX(65%) rotate(7deg)}}
+55%,100%{transform:translateX(65%) rotate(7deg)}}
 @keyframes ringSpin{to{transform:rotateX(72deg) rotateZ(378deg)}}
 @keyframes orbOrbit{to{transform:rotate(360deg) translateX(205px) rotate(-360deg)}}
 @keyframes blink{50%{opacity:.35}}
