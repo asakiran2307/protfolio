@@ -40,11 +40,13 @@ footer{padding:80px 0 25px;border-top:1px solid #ffffff10}.foot{display:flex;jus
 <section id="certs"><div class="wrap"><div class="head reveal"><div><div class="num">05 / CREDENTIALS</div><h2>LEARN →<br>APPLY → REPEAT.</h2></div><p>Selected credentials and recognition documented in the supplied profile research.</p></div><div class="certs" id="certGrid"></div></div></section>
 <section id="contact"><div class="wrap"><div class="head reveal"><div><div class="num">06 / CONTACT</div><h2>LET'S BUILD<br>SOMETHING.</h2></div><p>For collaborations, student innovation, software builds, events or technical conversations.</p></div><div class="contact"><div class="reveal"><div class="big">TURN AN<br>IDEA INTO<br><span style="color:var(--gold)">A BUILD.</span></div><p class="copy">GitHub is the living project archive. LinkedIn is the professional trail.</p><div class="links"><a href="https://github.com/asakiran2307" target="_blank">GITHUB ↗</a><a href="https://in.linkedin.com/in/grandhi-ashakiran-11b906323" target="_blank">LINKEDIN ↗</a></div></div><div class="terminal reveal"><div class="termbar"><i></i><i></i><i></i></div><div class="term"><div><b>collab@kiran</b>:~$ ./next_project</div><div style="color:var(--lime)">permission granted ✓</div><div>AI + security + software + imagination</div><div><b>collab@kiran</b>:~$ _</div></div></div></div></div></section>
 </main><footer><div class="wrap"><div class="foot"><div><div class="eyebrow">GRANDHI ASHAKIRAN / 2K26</div><h2>DREAM <i>•</i> BUILD <i>•</i> REPEAT.</h2></div><a class="btn gold" href="#home">BACK TO TOP ↑</a></div><div class="copyline"><span>© 2026 Grandhi Ashakiran.</span><span>JOY UNIVERSITY · VENKATAGIRI, AP</span></div></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script><script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/FBXLoader.js"></script>
-<script>
-(()=>{const canvas=document.getElementById("fbxCanvas"),loading=document.getElementById("modelLoading"),fallback=document.getElementById("modelFallback");if(!canvas||!window.THREE||!THREE.FBXLoader)return;
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script type="module">
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
+import { FBXLoader } from "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/FBXLoader.js";
+(()=>{const canvas=document.getElementById("fbxCanvas"),loading=document.getElementById("modelLoading"),fallback=document.getElementById("modelFallback");if(!canvas)return;
 const scene=new THREE.Scene();scene.background=null;
-const camera=new THREE.PerspectiveCamera(28,1,.1,100);camera.position.set(0,1.35,7);
+const camera=new THREE.PerspectiveCamera(28,1,.1,100);camera.position.set(0,1.55,5.6);
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.shadowMap.enabled=true;
 scene.add(new THREE.HemisphereLight(0xdde9ff,0x111522,2.4));
@@ -52,7 +54,7 @@ const key=new THREE.DirectionalLight(0xffd28a,3.2);key.position.set(3,6,5);key.c
 const rim=new THREE.PointLight(0x54d7ff,8,12);rim.position.set(-3,2,2);scene.add(rim);
 const gold=new THREE.PointLight(0xf5b63f,5,10);gold.position.set(3,1,-2);scene.add(gold);
 const group=new THREE.Group();scene.add(group);let mixer=null;
-const loader=new THREE.FBXLoader();loader.load("Kiran_3D_Profile_Model.fbx",obj=>{obj.scale.setScalar(0.011);obj.position.set(0,-1.85,0);obj.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;if(o.material){o.material.roughness=.48;o.material.metalness=.08}}});group.add(obj);if(fallback)fallback.style.opacity="0";loading.textContent="3D MODEL • INTERACTIVE";},undefined,()=>{loading.textContent="3D MODEL • PREVIEW";});
+const loader=new FBXLoader();loader.load("Kiran_3D_Profile_Model.fbx",obj=>{obj.scale.setScalar(0.72);obj.position.set(0,-1.55,0);obj.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;if(o.material){o.material.roughness=.48;o.material.metalness=.08}}});group.add(obj);if(fallback)fallback.style.opacity="0";loading.textContent="3D MODEL • INTERACTIVE";},undefined,()=>{loading.textContent="3D MODEL • PREVIEW";});
 function resize(){const w=canvas.clientWidth||400,h=canvas.clientHeight||500;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}addEventListener("resize",resize);resize();
 let tx=0,ty=0;canvas.addEventListener("pointermove",e=>{const r=canvas.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*.7;ty=((e.clientY-r.top)/r.height-.5)*.25});
 function loop(){requestAnimationFrame(loop);group.rotation.y+=(tx-group.rotation.y)*.055;group.rotation.x+=(-ty-group.rotation.x)*.055;group.rotation.y+=.0025;renderer.render(scene,camera)}loop();
