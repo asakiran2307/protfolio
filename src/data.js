@@ -3,7 +3,7 @@ export const portfolio = {
   name: 'Grandhi Ashakiran',
   shortName: 'Ashakiran',
   role: 'Cybersecurity Student · Developer · Builder',
-  seriesLabel: 'THE SERIES',
+  seriesLabel: 'PORTFOLIO',
   year: '2026',
   match: '98%',
   location: 'Tamil Nadu, India',
@@ -19,7 +19,6 @@ export const portfolio = {
   bio: 'A curious builder turning ambitious ideas into useful digital products — from campus platforms and automation to security-first experiences. I learn by building, break things thoughtfully, and ship what matters.',
   quote: '“The best way to predict the future is to build something that makes it possible.”',
   experience: [
-    { company: 'Embeddex Innovators Club', role: 'Technical Head', dates: '2026 — Present', bullets: ['Coordinate technical initiatives and help turn student ideas into working prototypes.', 'Support hands-on learning, collaborative builds and campus technology events.', 'Contribute to hackathon planning and technical problem-solving.'] },
     { company: 'DOSSS Student Council · Joy University', role: 'Executive Council Member', dates: 'Oct 2026 — Present', bullets: ['Represent and support the student community.', 'Participate in council activities and student-focused initiatives.', 'Collaborate with fellow council members to improve campus life.'] },
     { company: 'ACM Student Chapter', role: 'Vice Chair & Webmaster', dates: '2026 — Present', bullets: ['Support chapter activities and student technology engagement.', 'Help maintain and improve chapter web presence.', 'Encourage peer learning and participation in computing events.'] }
   ],
