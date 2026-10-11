@@ -11,7 +11,7 @@ export const portfolio = {
   college: 'Joy University',
   cgpa: 'Not provided',
   primaryLanguage: 'Python · JavaScript',
-  email: 'mailto:your-email@example.com',
+  email: 'mailto:ashakirangrandhi@gmail.com',
   linkedin: 'https://linkedin.com/in/grandhi-ashakiran-11b906323',
   github: 'https://github.com/asakiran2307',
   resume: '/resume.pdf',
