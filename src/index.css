@@ -15,3 +15,16 @@
 @keyframes heroAurora{0%{transform:translate3d(0,0,0) scale(.92)}100%{transform:translate3d(35px,-25px,0) scale(1.15)}}@keyframes orbitSpin{from{rotate:0deg}to{rotate:360deg}}@keyframes heroScan{0%,100%{transform:translateY(-110%);opacity:0}15%,75%{opacity:.8}85%{transform:translateY(320%);opacity:0}}
 @media(max-width:767px){.hero-grid{background-size:32px 32px;opacity:.12}.hero-3d{min-height:unset}.hero-portrait-shell{border-radius:48% 48% 1rem 1rem}.hero-float-card{padding:.65rem .75rem}.hero-title-3d{text-shadow:0 1px 0 #888,0 3px 0 #333,0 10px 24px #000b}}
 @media(prefers-reduced-motion:reduce){.hero-aurora,.hero-orbit-a,.hero-orbit-b,.hero-scanline{animation:none!important}}
+
+/* Scroll-driven automotive portfolio experience */
+.driving-car-layer{perspective:900px;opacity:.94}.car-road{background:linear-gradient(90deg,transparent,rgba(255,65,86,.8),rgba(255,255,255,.18),transparent);box-shadow:0 0 14px #e50914}.car-road-glow{background:linear-gradient(90deg,transparent,rgba(229,9,20,.18),transparent);filter:blur(8px)}.driving-car{filter:drop-shadow(0 0 16px #e5091460);transform-style:preserve-3d}
+.section-wrap{position:relative;isolation:isolate}.section-wrap:before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0;opacity:.105;background-position:center;background-size:cover;background-repeat:no-repeat;mask-image:linear-gradient(to bottom,transparent,black 14%,black 70%,transparent)}
+#resume:before{background-image:linear-gradient(100deg,#08080d 8%,transparent 75%),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85')}
+#moments:before{background-image:linear-gradient(100deg,#08080d 8%,transparent 75%),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85')}
+#skills:before{background-image:linear-gradient(100deg,#08080d 8%,transparent 75%),url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1800&q=85')}
+#projects:before{background-image:linear-gradient(100deg,#08080d 8%,transparent 75%),url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1800&q=85')}
+#about:before{background-image:linear-gradient(100deg,#08080d 8%,transparent 75%),url('https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1800&q=85')}
+#journey:before{background-image:linear-gradient(100deg,#08080d 8%,transparent 75%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85')}
+#contact:before{background-image:linear-gradient(100deg,#08080d 8%,transparent 75%),url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85')}
+@media(max-width:767px){.section-wrap:before{opacity:.07}.driving-car-layer{display:none}}
+@media(prefers-reduced-motion:reduce){.driving-car{filter:none}}
