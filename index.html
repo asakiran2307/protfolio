@@ -87,6 +87,44 @@ a:focus-visible{outline:2px solid #8fe5ff;outline-offset:4px}
 .portrait .photo-link-label{position:absolute;right:12px;bottom:12px;padding:8px 11px;background:rgba(4,10,22,.82);border:1px solid rgba(143,229,255,.4);border-radius:4px;color:#e4faff;font-size:11px;letter-spacing:.03em}
 @media(max-width:680px){.portrait{grid-row:1;height:clamp(270px,78vw,390px);width:min(100%,420px);padding:0;margin:0 auto}.portrait .photo-link{max-width:100%}.portrait .photo-link-label{right:9px;bottom:9px}}
 
+
+/* Premium depth pass: layered lighting, perspective, glass and 3D hover */
+:root{--depth-cyan:rgba(105,224,255,.2);--depth-violet:rgba(157,125,255,.16)}
+body{perspective:1400px;background-image:radial-gradient(ellipse at 12% 12%,rgba(37,105,150,.14),transparent 36%),radial-gradient(ellipse at 88% 20%,var(--depth-violet),transparent 32%),linear-gradient(180deg,#050914,#060d1b 60%,#050914)}
+.hero{isolation:isolate;transform-style:preserve-3d}
+.hero:before{transform:translateZ(-28px) scale(1.08);filter:saturate(1.15) contrast(1.04)}
+.hero:after{pointer-events:none}
+.hero-copy{position:relative;transform:translateZ(28px);animation:depth-rise .85s cubic-bezier(.2,.7,.2,1) both}
+.portrait{perspective:1000px;transform-style:preserve-3d}
+.portrait .photo-link{transform:rotateY(-5deg) rotateX(1deg) translateZ(18px);transform-origin:center center;box-shadow:18px 25px 65px rgba(0,0,0,.36),0 0 0 1px rgba(124,220,255,.08),inset 0 0 30px rgba(109,189,255,.06);transition:transform .45s cubic-bezier(.2,.75,.2,1),box-shadow .45s,border-color .3s}
+.portrait .photo-link img{transition:transform .65s cubic-bezier(.2,.75,.2,1)}
+.portrait .photo-link:hover{transform:rotateY(0) rotateX(0) translateY(-5px) translateZ(28px);box-shadow:22px 32px 75px rgba(0,0,0,.42),0 0 34px rgba(105,224,255,.12);border-color:rgba(143,233,255,.55)}
+.portrait .photo-link:hover img{transform:scale(1.025)}
+.section-label{display:flex;align-items:center;gap:12px}
+.section-label:before{flex:0 0 32px;box-shadow:0 0 14px rgba(105,224,255,.32)}
+.info-card,.skill,.certs,.project,.mini-card{position:relative;isolation:isolate;transform-style:preserve-3d;transition:transform .28s cubic-bezier(.2,.75,.2,1),border-color .28s,box-shadow .28s,background .28s;box-shadow:0 12px 28px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.025)}
+.info-card:before,.skill:before,.certs:before,.project:before,.mini-card:before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(117,223,255,.055),transparent 44%,rgba(163,128,255,.04));opacity:.7;pointer-events:none;z-index:-1}
+.skill:hover,.info-card:hover,.certs:hover,.mini-card:hover{transform:translateY(-3px) rotateX(1deg);border-color:rgba(105,224,255,.34);box-shadow:0 18px 35px rgba(0,0,0,.22),0 0 22px rgba(105,224,255,.045)}
+.project{transform:perspective(850px) rotateX(0) translateZ(0)}
+.project:hover{transform:perspective(850px) rotateX(1.4deg) translateY(-5px) translateZ(7px);border-color:rgba(105,224,255,.5);box-shadow:0 22px 42px rgba(0,0,0,.25),0 0 25px rgba(105,224,255,.075)}
+.project-icon{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 8px 20px rgba(0,0,0,.18);transition:transform .3s}
+.project:hover .project-icon{transform:translateZ(12px) rotate(-4deg) scale(1.04)}
+.btn{box-shadow:0 8px 24px rgba(20,143,190,.1)}
+.btn.primary:hover{transform:translateY(-3px) scale(1.025);box-shadow:0 12px 30px rgba(80,214,237,.2)}
+a,.nav-links a{transition:color .2s,border-color .2s,transform .2s}
+.nav-links a:hover{transform:translateY(-1px);color:#8fe9ff}
+.timeline:before{box-shadow:0 0 14px rgba(105,224,255,.25)}
+@keyframes depth-rise{from{opacity:0;transform:translate3d(0,18px,28px)}to{opacity:1;transform:translate3d(0,0,28px)}}
+@media(max-width:680px){
+ body{perspective:none}
+ .hero-copy{transform:none;animation:none}
+ .hero:before{transform:none}
+ .portrait .photo-link{transform:none;box-shadow:0 14px 36px rgba(0,0,0,.28)}
+ .portrait .photo-link:hover{transform:translateY(-2px)}
+ .info-card:hover,.skill:hover,.certs:hover,.mini-card:hover,.project:hover{transform:translateY(-2px)}
+}
+@media(prefers-reduced-motion:reduce){.hero-copy{animation:none}.portrait .photo-link,.portrait .photo-link img,.info-card,.skill,.certs,.project,.mini-card,.project-icon{transition:none}}
+
 </style>
 </head>
 <body>
